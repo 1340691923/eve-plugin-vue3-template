@@ -1,0 +1,53 @@
+{
+  "developer": "xiaowenlong",
+  "plugin_alias": "eve-plugin-vue3-template",
+  "plugin_name":"hello-world",
+  "frontend_debug": false,
+  "version": "0.0.1",
+  "main_go_file": "main.go",
+  "frontend_dev_port":7001,
+  "frontend_routes": [
+    {
+      "path": "hello-world",
+      "name": "HelloWorld",
+      "meta": {
+        "title": "HelloWorld",
+        "icon": "el-icon-coin"
+      }
+    },
+    {
+      "path": "db-test",
+      "name": "db-test",
+      "meta": {
+        "title": "操作数据库",
+        "icon": "el-icon-coin"
+      }
+    }
+  ],
+  "backend_routes": [
+    {
+      "path": "/api/HelloWorld",
+      "remark": "HelloWorld测试接口",
+      "needAuth": false
+    },
+    {
+      "path": "/api/DbInsert",
+      "remark": "测试db插入",
+      "needAuth": false
+    },
+    {
+      "path": "/api/DbDelete",
+      "remark": "测试db删除",
+      "needAuth": false
+    },
+    {
+      "path": "/api/DbSearch",
+      "remark": "测试db查询",
+      "needAuth": true
+    }
+  ]
+}
+
+
+
+
