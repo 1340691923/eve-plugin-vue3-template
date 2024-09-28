@@ -1,6 +1,6 @@
 module eve-plugin-vue3-template
 
-go 1.19
+go 1.20
 
 require (
 	github.com/1340691923/eve-plugin-sdk-go v0.0.2
