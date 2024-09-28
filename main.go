@@ -3,8 +3,11 @@ package main
 import (
 	_ "embed"
 	"encoding/json"
+	"eve-plugin-vue3-template/backend/global"
 	"eve-plugin-vue3-template/backend/migrate"
 	"eve-plugin-vue3-template/backend/router"
+	"log"
+
 	"flag"
 	"github.com/1340691923/eve-plugin-sdk-go/backend/logger"
 	"github.com/1340691923/eve-plugin-sdk-go/backend/plugin_server"
@@ -14,16 +17,12 @@ import (
 
 //go:embed plugin.json
 var pluginJsonBytes []byte
-var (
-	evRpcPort string
-	evRpcKey  string
-	debug     bool
-)
 
 func init() {
-	flag.StringVar(&evRpcPort, "evRpcPort", "", "ev基座内网访问端口")
-	flag.StringVar(&evRpcKey, "evRpcKey", "", "ev基座访问密钥")
-	flag.BoolVar(&debug, "debug", debug, "是否开启调试")
+	flag.StringVar(&global.EvRpcPort, "evRpcPort", "", "ev基座内网访问端口")
+	flag.StringVar(&global.EvRpcKey, "evRpcKey", "", "ev基座访问密钥")
+	flag.StringVar(&global.TmpFileStorePath, "tmpFileStorePath", "store_file_dir", "临时文件存放目录")
+	flag.BoolVar(&global.Debug, "debug", false, "是否开启调试")
 	flag.Parse()
 }
 
@@ -32,17 +31,19 @@ func main() {
 	pluginJson := new(build.PluginJsonData)
 	err := json.Unmarshal(pluginJsonBytes, &pluginJson)
 	if err != nil {
+		log.Println("plugin.json解析失败")
 		panic(err)
 	}
-	pluginJson.BackendDebug = debug
+
+	pluginJson.BackendDebug = global.Debug
 	plugin_server.Serve(plugin_server.ServeOpts{
-		EvRpcPort:           evRpcPort,
-		EvRpcKey:            evRpcKey,
+		EvRpcPort:           global.EvRpcPort,
+		EvRpcKey:            global.EvRpcKey,
 		PluginJson:          pluginJson,
 		Migration:           migrate.GetMigrates(),
 		CallResourceHandler: router.NewResourceHandler(gin.New()),
 		ExitCallback: func() {
-			logger.DefaultLogger.Debug(pluginJson.PluginAlias + "插件进程退出")
+			logger.DefaultLogger.Debug("进程退出")
 		},
 	})
 }

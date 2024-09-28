@@ -28,10 +28,7 @@ func (this *HelloWorldController) HelloAction(ctx *gin.Context) {
 		return
 	}
 
-	logger.DefaultLogger.Debug("打印日志",
-
-		"conn_id:", req.EsConnect,
-	)
+	logger.DefaultLogger.Debug("打印日志", "conn_id:", req.EsConnect)
 
 	//调用基座api
 	esI := ev_api.NewEvWrapApi(req.EsConnect, cast.ToInt(ctx.GetHeader(util.EvRoleID)), cast.ToInt(ctx.GetHeader(util.EvUserID)))
