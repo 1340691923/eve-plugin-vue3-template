@@ -31,7 +31,7 @@ func (this *HelloWorldController) HelloAction(ctx *gin.Context) {
 	logger.DefaultLogger.Debug("打印日志", "conn_id:", req.EsConnect)
 
 	//调用基座api
-	esI := ev_api.NewEvWrapApi(req.EsConnect, cast.ToInt(ctx.GetHeader(util.EvRoleID)), cast.ToInt(ctx.GetHeader(util.EvUserID)))
+	esI := ev_api.NewEvWrapApi(req.EsConnect, cast.ToInt(ctx.GetHeader(util.EvUserID)))
 
 	//ping一下所在连接的es
 	res, err := esI.Ping(ctx)
