@@ -3,7 +3,7 @@ module eve-plugin-vue3-template
 go 1.20
 
 require (
-	github.com/1340691923/eve-plugin-sdk-go v0.0.3
+	github.com/1340691923/eve-plugin-sdk-go v0.0.4
 	github.com/gin-gonic/gin v1.9.0
 	github.com/spf13/cast v1.7.0
 )
