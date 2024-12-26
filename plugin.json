@@ -6,13 +6,16 @@
   "version": "0.0.1",
   "main_go_file": "main.go",
   "frontend_dev_port":7001,
+  "frontend_2c": true,
   "frontend_routes": [
     {
       "path": "hello-world",
       "name": "HelloWorld",
       "meta": {
         "title": "HelloWorld",
-        "icon": "el-icon-coin"
+        "icon": "el-icon-coin",
+        "hidden":true,
+        "service":false
       }
     },
     {
@@ -25,21 +28,6 @@
     }
   ],
   "backend_routes": [
-    {
-      "path": "/api/HelloWorld",
-      "remark": "HelloWorld测试接口",
-      "needAuth": false
-    },
-    {
-      "path": "/api/DbInsert",
-      "remark": "测试db插入",
-      "needAuth": false
-    },
-    {
-      "path": "/api/DbDelete",
-      "remark": "测试db删除",
-      "needAuth": false
-    },
     {
       "path": "/api/DbSearch",
       "remark": "测试db查询",

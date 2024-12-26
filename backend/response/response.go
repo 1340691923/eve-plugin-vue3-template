@@ -3,7 +3,7 @@ package response
 
 import (
 	"encoding/json"
-	"eve-plugin-vue3-template/backend/my_error"
+	"ev-plugin/backend/my_error"
 	"fmt"
 	"github.com/1340691923/eve-plugin-sdk-go/backend/logger"
 	"github.com/gin-gonic/gin"

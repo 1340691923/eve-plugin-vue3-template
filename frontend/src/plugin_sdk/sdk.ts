@@ -57,7 +57,6 @@ class SDK implements PluginApiInterface {
     }
 
     getLanguage():string{
-        console.log("EvAppConigStore.value.language",EvAppConigStore.value.language)
         return EvAppConigStore.value.language
     }
 

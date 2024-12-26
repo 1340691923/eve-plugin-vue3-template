@@ -1,8 +1,8 @@
 package router
 
 import (
-	"eve-plugin-vue3-template/backend/api"
-	"eve-plugin-vue3-template/backend/response"
+	"ev-plugin/backend/api"
+	"ev-plugin/backend/response"
 	"github.com/1340691923/eve-plugin-sdk-go/backend/web_engine"
 )
 
@@ -24,8 +24,10 @@ func NewWebServer(app *web_engine.WebEngine) *WebServer {
 	}
 }
 
-// 实现web资源接口（webapi） 可用任何实现http.Handle接口的Web框架开发 我这里用gin为例
-func NewRouter(app *web_engine.WebEngine) *web_engine.WebEngine {
+func NewRouter() *web_engine.WebEngine {
+
+	app := web_engine.NewWebEngine()
+
 	//后端api
 	webSvr := NewWebServer(app)
 

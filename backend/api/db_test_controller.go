@@ -1,9 +1,9 @@
 package api
 
 import (
-	"eve-plugin-vue3-template/backend/dto"
-	"eve-plugin-vue3-template/backend/model"
-	"eve-plugin-vue3-template/backend/response"
+	"ev-plugin/backend/dto"
+	"ev-plugin/backend/model"
+	"ev-plugin/backend/response"
 	"github.com/gin-gonic/gin"
 )
 

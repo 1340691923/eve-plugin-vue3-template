@@ -1,7 +1,7 @@
 package api
 
 import (
-	"eve-plugin-vue3-template/backend/response"
+	"ev-plugin/backend/response"
 )
 
 // 父控制器结构体
