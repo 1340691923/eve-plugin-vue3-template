@@ -6,8 +6,8 @@ import (
 	"ev-plugin/backend/router"
 	"ev-plugin/frontend"
 	"flag"
-	"github.com/1340691923/eve-plugin-sdk-go/backend/logger"
 	"github.com/1340691923/eve-plugin-sdk-go/backend/plugin_server"
+	"github.com/1340691923/eve-plugin-sdk-go/build"
 )
 
 //go:embed plugin.json
@@ -19,11 +19,10 @@ func main() {
 
 	plugin_server.Serve(plugin_server.ServeOpts{
 		PluginJsonBytes: pluginJsonBytes,
-		Migration:       migrate.GetMigrates(),
-		FrontendFiles:   frontend.StatisFs,
-		WebEngine:       router.NewRouter(),
-		ExitCallback: func() {
-			logger.DefaultLogger.Debug("进程退出")
-		},
+		Migration: &build.Gormigrate{Migrations: []*build.Migration{
+			migrate.V0_0_1(),
+		}}, //数据版本迁移
+		FrontendFiles: frontend.StatisFs,
+		WebEngine:     router.NewRouter(),
 	})
 }

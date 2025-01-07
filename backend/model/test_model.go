@@ -28,8 +28,8 @@ func (this *TestModel) Insert() (err error) {
 	sql, args := sql_builder.SqlBuilder.
 		Insert(this.TableName()).
 		SetMap(map[string]interface{}{
-			"key":   this.Key,
-			"value": this.Value,
+			"`key`":   this.Key,
+			"`value`": this.Value,
 		}).MustSql()
 	_, err = ev_api.GetEvApi().StoreExec(context.Background(), sql, args...)
 	if err != nil {
