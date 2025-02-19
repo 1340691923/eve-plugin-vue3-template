@@ -28,6 +28,22 @@ class SDK implements PluginApiInterface {
 
     evRouter:Router;
 
+    subToChannel;
+
+    callToChannel;
+
+    //channel 频道
+    //msgCb 消息回调
+    async SubToChannel(channel:string,msgCb:any) {
+        this.subToChannel(channel,msgCb)
+    }
+
+    //channel 频道
+    //msgCb 消息
+    async CallToChannel(channel:string,msg:any) {
+        this.callToChannel(channel,msg)
+    }
+
     async CallPluginApi(req:Req): Promise<any> {
        return this.callPluginCallBack(this.pluginAlias,req.url,req.method,req.data)
     }

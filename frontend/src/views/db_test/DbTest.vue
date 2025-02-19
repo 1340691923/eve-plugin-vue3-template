@@ -44,6 +44,7 @@
           width="300"
       >
         <template #header>
+
           <el-button  @click="searchTest(1)">
             {{ $t('刷新') }}
           </el-button>
@@ -84,11 +85,10 @@
 import {ElMessage} from "element-plus";
 import {ref, onMounted} from 'vue';
 import { CleanAction, ListAction,DbInsert} from '@/api/db_test';
+import {sdk} from '@/plugin_sdk/sdk'
 
 export default {
   name: 'DbTest',
-
-
   setup(props, { emit }) {
     const input = ref({
       page: 1,
@@ -97,6 +97,7 @@ export default {
     const list = ref([]);
     const total = ref(0);
     const searchTest = async (page = 1) => {
+
       input.value.page = page
 
       const { data, code, msg } = await ListAction(input.value);
@@ -125,7 +126,6 @@ export default {
     };
 
     const addHeader = ()=>{
-      console.log("list",list)
       list.value.unshift({key:'',value:''})
     }
 

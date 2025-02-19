@@ -38,7 +38,6 @@ const init = async ()=>{
       message: JSON.stringify(res.data.text, null, '\t')
     })
 
-
 }
 
 onMounted(()=>{
