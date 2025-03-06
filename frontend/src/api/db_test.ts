@@ -1,4 +1,4 @@
-import {request} from "../plugin_sdk/sdk";
+import {request} from '@elasticview/plugin-sdk'
 
 export function DbInsert(data:any) {
     return request({

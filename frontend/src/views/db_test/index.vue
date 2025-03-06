@@ -15,7 +15,7 @@
 import {onMounted, ref} from "vue";
 import {HelloAction} from "@/api/helloworld";
 import {ElMessage} from "element-plus";
-import {sdk} from "@/plugin_sdk/sdk"
+import {sdk} from '@elasticview/plugin-sdk'
 
 const loading = ref(false)
 

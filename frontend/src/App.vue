@@ -8,11 +8,22 @@
 
 <script setup>
 
-import {sdk} from '@/plugin_sdk/sdk'
-import {computed} from "vue";
+import {sdk} from '@elasticview/plugin-sdk'
+import {computed, onMounted} from "vue";
 
 const size = computed(()=>{
   return sdk.getLayoutSize()
+})
+
+onMounted(()=>{
+  sdk.subToChannel("live",(res)=>{
+    console.log(res)
+  })
+  setTimeout(()=>{
+    sdk.callToChannel("live",{
+      test:520
+    })
+  })
 })
 
 

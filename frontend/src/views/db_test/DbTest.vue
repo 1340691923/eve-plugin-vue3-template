@@ -85,7 +85,6 @@
 import {ElMessage} from "element-plus";
 import {ref, onMounted} from 'vue';
 import { CleanAction, ListAction,DbInsert} from '@/api/db_test';
-import {sdk} from '@/plugin_sdk/sdk'
 
 export default {
   name: 'DbTest',
