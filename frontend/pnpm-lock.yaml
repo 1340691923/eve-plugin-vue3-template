@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@elasticview/plugin-sdk':
-        specifier: 1.0.12
-        version: 1.0.12(typescript@5.5.4)
+        specifier: 1.0.14
+        version: 1.0.14(typescript@5.5.4)
       '@element-plus/icons-vue':
         specifier: ^2.3.1
         version: 2.3.1(vue@3.4.35(typescript@5.5.4))
@@ -102,8 +102,8 @@ packages:
     resolution: {integrity: sha512-SITSV6aIXsuVNV3f3O0f2n/cgyEDWoSqtZMYiAmcsYHydcKrOz3gUxB/iXd/Qf08+IZX4KpgNbvUdMBmWz+kcA==}
     engines: {node: '>=10'}
 
-  '@elasticview/plugin-sdk@1.0.12':
-    resolution: {integrity: sha512-dJg/DojSKy9gvAOk/HG//aX0FyX51ct+7xziH/OzZ4JX69PKvtgrS0uv7OBhmE1qIH6AMsDlAWIFTqopjvUFzQ==}
+  '@elasticview/plugin-sdk@1.0.14':
+    resolution: {integrity: sha512-k0XHlHeO6hBh/uf3otiWhc0P4mSTi2k4Ve2IQkrRTZ8jXHJG3G/INUp2O3+D+Rtjl+VvcPHySL8vwcMhhbv2sw==}
 
   '@element-plus/icons-vue@2.3.1':
     resolution: {integrity: sha512-XxVUZv48RZAd87ucGS48jPf6pKu0yV5UCg9f4FFwtrYxXOwWuVJo6wOvSLKEoMQKjv8GsX/mhP6UsC1lRwbUWg==}
@@ -935,7 +935,7 @@ snapshots:
 
   '@ctrl/tinycolor@3.6.1': {}
 
-  '@elasticview/plugin-sdk@1.0.12(typescript@5.5.4)':
+  '@elasticview/plugin-sdk@1.0.14(typescript@5.5.4)':
     dependencies:
       '@vueuse/components': 10.11.1(vue@3.4.35(typescript@5.5.4))
       '@vueuse/core': 10.11.1(vue@3.4.35(typescript@5.5.4))

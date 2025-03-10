@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@elasticview/plugin-sdk": "1.0.12",
+    "@elasticview/plugin-sdk": "1.0.14",
     "@element-plus/icons-vue": "^2.3.1",
     "@vueuse/components": "^10.11.1",
     "@vueuse/core": "^10.11.1",

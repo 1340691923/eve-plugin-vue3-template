@@ -1,21 +1,19 @@
 {
-  "developer": "xiaowenlong",
+  "developer": "肖大侠",
   "plugin_alias": "eve-plugin-vue3-template",
   "plugin_name":"hello-world",
   "frontend_debug": false,
   "version": "0.0.1",
   "main_go_file": "main.go",
   "frontend_dev_port":7001,
-  "frontend_2c": true,
+  "frontend_2c": false,
   "frontend_routes": [
     {
       "path": "hello-world",
       "name": "HelloWorld",
       "meta": {
         "title": "HelloWorld",
-        "icon": "el-icon-coin",
-        "hidden":true,
-        "service":false
+        "icon": "el-icon-coin"
       }
     },
     {
