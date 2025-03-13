@@ -24,17 +24,14 @@ func NewWebServer(app *web_engine.WebEngine) *WebServer {
 	}
 }
 
-func NewRouter() *web_engine.WebEngine {
-
-	app := web_engine.NewWebEngine()
+func NewRouter(engine *web_engine.WebEngine) {
 
 	//后端api
-	webSvr := NewWebServer(app)
+	webSvr := NewWebServer(engine)
 
 	webSvr.engine.GetGinEngine().POST("/api/HelloWorld", webSvr.helloWorldContoller.HelloAction)
 	webSvr.engine.GetGinEngine().POST("/api/DbInsert", webSvr.dbTestWorldController.InsertAction)
 	webSvr.engine.GetGinEngine().POST("/api/DbDelete", webSvr.dbTestWorldController.DeleteAction)
 	webSvr.engine.GetGinEngine().POST("/api/DbSearch", webSvr.dbTestWorldController.SearchAction)
 
-	return app
 }

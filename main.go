@@ -18,11 +18,13 @@ func main() {
 	flag.Parse()
 
 	plugin_server.Serve(plugin_server.ServeOpts{
-		PluginJsonBytes: pluginJsonBytes,
+		Assets: &plugin_server.Assets{
+			PluginJsonBytes: pluginJsonBytes,
+			FrontendFiles:   frontend.StatisFs,
+		},
 		Migration: &build.Gormigrate{Migrations: []*build.Migration{
 			migrate.V0_0_1(),
 		}}, //数据版本迁移
-		FrontendFiles: frontend.StatisFs,
-		WebEngine:     router.NewRouter(),
+		RegisterRoutes: router.NewRouter,
 	})
 }
