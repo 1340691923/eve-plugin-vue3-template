@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	_ "embed"
 	"ev-plugin/backend/migrate"
 	"ev-plugin/backend/router"
@@ -21,6 +22,8 @@ func main() {
 		Assets: &plugin_server.Assets{
 			PluginJsonBytes: pluginJsonBytes,
 			FrontendFiles:   frontend.StatisFs,
+		},
+		ReadyCallBack: func(ctx context.Context) {
 		},
 		Migration: &build.Gormigrate{Migrations: []*build.Migration{
 			migrate.V0_0_1(),
