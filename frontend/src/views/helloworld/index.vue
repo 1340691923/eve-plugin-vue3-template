@@ -16,7 +16,7 @@
 
 <script setup>
 
-import {onMounted, ref} from "vue";
+import {onMounted, onActivated,ref} from "vue";
 import {HelloAction} from "@/api/helloworld";
 import {ElMessage} from "element-plus";
 import {sdk} from '@elasticview/plugin-sdk'
@@ -47,6 +47,9 @@ const init = async ()=>{
 
 onMounted(()=>{
   init()
+})
+
+onActivated(()=>{
 })
 
 </script>

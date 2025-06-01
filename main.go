@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"embed"
 	_ "embed"
 	"ev-plugin/backend/migrate"
 	"ev-plugin/backend/router"
@@ -14,6 +15,9 @@ import (
 //go:embed plugin.json
 var pluginJsonBytes []byte
 
+//go:embed logo.png
+var logoPng embed.FS
+
 func main() {
 
 	flag.Parse()
@@ -22,8 +26,10 @@ func main() {
 		Assets: &plugin_server.Assets{
 			PluginJsonBytes: pluginJsonBytes,
 			FrontendFiles:   frontend.StatisFs,
+			Icon: logoPng,
 		},
 		ReadyCallBack: func(ctx context.Context) {
+
 		},
 		Migration: &build.Gormigrate{Migrations: []*build.Migration{
 			migrate.V0_0_1(),

@@ -83,7 +83,7 @@
 
 <script>
 import {ElMessage} from "element-plus";
-import {ref, onMounted} from 'vue';
+import {ref, onMounted,onActivated} from 'vue';
 import { CleanAction, ListAction,DbInsert} from '@/api/db_test';
 
 export default {
@@ -135,6 +135,9 @@ export default {
     onMounted(() => {
       searchTest();
     });
+    onActivated(()=>{
+
+    })
 
     const save = async (row)=>{
 
@@ -165,5 +168,5 @@ export default {
 </script>
 
 <style scoped>
-/* Add any styles here */
+
 </style>
