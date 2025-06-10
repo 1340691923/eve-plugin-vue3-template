@@ -6,6 +6,7 @@
   "main_go_file": "main.go",
   "frontend_dev_port":7001,
   "frontend_2c": false,
+  "frontend_debug": true,
   "frontend_routes": [
     {
       "path": "hello-world",
