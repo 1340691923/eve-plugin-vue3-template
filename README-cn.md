@@ -38,9 +38,6 @@ npm install -g pnpm
     -response   模板自定义响应包
     -router     后端路由定义模块
     -vo         web响应结构
--cmd 
-    -ev_plugin_builder  工具包 用于编译各操作系统（windows,linux,darwin）的二进制插件
-    -ev_plugin_zip      工具包 用于打包项目源代码成zip
 -frontend      前端项目目录
     -dist      前端最终打包文件
     -src
@@ -104,7 +101,8 @@ npm install -g pnpm
 2. gowatch
 
 显示如下为启动成功：
-{"code":0,"msg":"操作成功","data":null}
+
+正常链接ev基座
 
 ```
 

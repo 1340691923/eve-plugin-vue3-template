@@ -37,9 +37,6 @@ npm install -g pnpm
     -response                 Template custom response package
     -router                   Backend routing definition module
     -vo                       Web response structure
--cmd
-    -ev_plugin_builder        Toolkit Used to compile binary plug-ins for various operating systems (windows, linux, darwin)
-    -ev_plugin_zip            Toolkit Used to package project source code into zip
 -frontend Frontend            project directory
     -dist                     Frontend final package file
     -src
@@ -101,6 +98,10 @@ npm install -g pnpm
 Project root directory execution:
 1. go mod tidy
 2. gowatch
+
+The following indicates successful startup:
+
+正常链接ev基座
 
 ```
 
