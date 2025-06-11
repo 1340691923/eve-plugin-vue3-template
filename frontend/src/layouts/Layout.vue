@@ -8,7 +8,6 @@
       <!-- keep-alive组件 - 实现页面缓存功能 -->
       <!-- 当用户在插件内切换页面时，保持组件状态不丢失，提升用户体验 -->
       <keep-alive>
-        <!-- 动态组件渲染 - 根据当前路由动态渲染对应的页面组件 -->
         <component :is="Component"  />
       </keep-alive>
     </router-view>
