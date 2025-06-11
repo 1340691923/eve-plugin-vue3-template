@@ -1,8 +1,12 @@
 <template>
-  <div  class="app-container">
-    <div  class="search-container">
+  <!-- ElasticView插件数据库测试页面 - 演示插件数据存储CRUD操作功能 -->
+  <!-- 应用容器 - 提供统一的页面样式和布局 -->
+  <div class="app-container">
+    <!-- 页面标题区域 - 显示功能说明 -->
+    <div class="search-container">
       <el-form>
         <el-form-item>
+          <!-- 功能标签 - 标识当前页面功能 -->
           <el-tag>
             数据库操作 demo
           </el-tag>

@@ -1,1 +1,97 @@
- 接口管理
+# ElasticView插件API接口管理说明
+
+## 接口组织规范
+
+本目录用于管理ElasticView插件前端的所有API接口定义，按功能模块进行文件划分：
+
+### 现有接口文件
+
+1. **helloworld.ts** - HelloWorld功能相关接口
+   - HelloAction: ElasticSearch连接测试接口
+
+2. **db_test.ts** - 数据库操作相关接口
+   - DbInsert: 数据插入接口
+   - CleanAction: 数据清空接口
+   - ListAction: 数据查询接口
+
+### 接口开发规范
+
+#### 1. 文件命名
+- 使用小写字母和下划线
+- 按功能模块划分文件
+- 文件名应清晰表达功能
+
+#### 2. 接口定义规范
+```typescript
+import {request} from '@elasticview/plugin-sdk'
+
+/**
+ * 接口函数 - 功能描述
+ * 
+ * @param data 请求参数对象
+ * @param data.param1 参数1描述
+ * @param data.param2 参数2描述
+ * @returns Promise<ApiResponse> 返回API响应
+ */
+export function ApiFunction(data: any) {
+  return request({
+    url: `/api/EndpointName`,  // 后端路由路径
+    method: 'post',            // HTTP方法
+    data                       // 请求数据
+  })
+}
+```
+
+#### 3. 错误处理
+- 所有接口调用都应该处理错误情况
+- 使用ElMessage组件显示错误信息
+- 检查响应的code字段判断成功或失败
+
+#### 4. TypeScript支持
+- 为接口参数和返回值定义类型
+- 使用interface定义复杂的数据结构
+- 提供完整的JSDoc注释
+
+### ElasticView插件SDK说明
+
+#### request函数
+ElasticView插件SDK提供的HTTP请求函数，具有以下特性：
+- 自动处理插件路由前缀
+- 集成ElasticView的认证机制
+- 支持请求拦截和响应拦截
+- 统一的错误处理
+
+#### 使用示例
+```typescript
+import {request} from '@elasticview/plugin-sdk'
+
+// 基本用法
+const response = await request({
+  url: '/api/endpoint',
+  method: 'post',
+  data: { param: 'value' }
+})
+
+// 检查响应
+if (response.code === 0) {
+  console.log('成功:', response.data)
+} else {
+  console.error('失败:', response.msg)
+}
+```
+
+### 扩展开发
+
+当需要添加新的API接口时：
+
+1. 在对应的功能模块文件中添加接口函数
+2. 如果是新功能模块，创建新的.ts文件
+3. 遵循命名规范和注释规范
+4. 在组件中导入并使用接口函数
+
+### 调试技巧
+
+1. 使用浏览器开发者工具的Network面板查看请求
+2. 检查请求路径是否正确
+3. 验证请求参数格式
+4. 查看后端返回的错误信息

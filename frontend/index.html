@@ -4,12 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ev插件</title>
+      <!-- ElasticView插件系统微前端路径配置脚本 -->
+      <!-- 从qiankun微前端框架注入的公共路径中提取动态基础路径 -->
+      <!-- 这个脚本确保插件资源可以在ElasticView系统中正确加载 -->
       <script>
           window.__dynamic_base__ = window.proxy.__INJECTED_PUBLIC_PATH_BY_QIANKUN__.substring(0,window.proxy.__INJECTED_PUBLIC_PATH_BY_QIANKUN__.length-1)
       </script>
   </head>
   <body>
+    <!-- Vue应用挂载点 - ElasticView插件前端应用的根容器 -->
     <div id="app"></div>
+    <!-- 模块化脚本入口 - 加载Vue应用主入口文件 -->
+    <!-- 开发环境下指向src/main.ts，生产环境下由Vite构建工具处理 -->
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
